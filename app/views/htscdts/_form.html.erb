@@ -1,0 +1,65 @@
+<%= form_for(@htscdt) do |f| %>
+  <% if @htscdt.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@htscdt.errors.count, "error") %> prohibited this htscdt from being saved:</h2>
+
+      <ul>
+      <% @htscdt.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :htsus %><br>
+    <%= f.text_field :htsus %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :verified_by %><br>
+    <%= f.text_field :verified_by %>
+  </div>
+  <div class="field">
+    <%= f.label :inv_description %><br>
+    <%= f.text_field :inv_description %>
+  </div>
+  <div class="field">
+    <%= f.label :gen_eng_description %><br>
+    <%= f.text_field :gen_eng_description %>
+  </div>
+  <div class="field">
+    <%= f.label :gen_esp_description %><br>
+    <%= f.text_field :gen_esp_description %>
+  </div>
+  <div class="field">
+    <%= f.label :early_triggers %><br>
+    <%= f.text_field :early_triggers %>
+  </div>
+  <div class="field">
+    <%= f.label :legal_authority %><br>
+    <%= f.text_field :legal_authority %>
+  </div>
+  <div class="field">
+    <%= f.label :comments %><br>
+    <%= f.text_area :comments %>
+  </div>
+  <div class="field">
+    <%= f.label :confidence %><br>
+    <%= f.text_field :confidence %>
+  </div>
+  <div class="field">
+    <%= f.label :image_url %><br>
+    <%= f.text_field :image_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

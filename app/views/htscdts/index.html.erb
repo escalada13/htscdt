@@ -1,0 +1,33 @@
+<h1>HTS Classifications</h1>
+
+<table>
+  <% @htscdts.each do |htscdt| %>
+  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+    <td> <%= image_tag(htscdt.image_url, class: 'list_image') %> </td>
+    <td class="list_description">
+      <dl>
+        <dt><%= htscdt.htsus %></dt>
+        <dd><%= htscdt.gen_eng_description %></dd>
+        <dd><%= htscdt.gen_esp_description %></dd>
+      </dl>
+    </td>
+
+    <td class="author_description">
+      <dl>
+        <dd><%= htscdt.author %></dd>
+        <dd><%= htscdt.verified_by %></dd>
+      </dl>
+    </td>
+
+    <td class="list_actions">
+      <%= link_to 'Show', htscdt %><br/>
+      <%= link_to 'Edit', edit_htscdt_path(htscdt) %><br/>
+      <%= link_to 'Destroy', htscdt, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'New HTSCDT', new_htscdt_path %>

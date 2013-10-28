@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  htsus: MyString
+  date: 2013-10-28
+  author: MyString
+  verified_by: MyString
+  inv_description: MyString
+  gen_eng_description: MyString
+  gen_esp_description: MyString
+  early_triggers: MyString
+  legal_authority: MyString
+  comments: MyText
+  confidence: MyString
+  image_url: MyString
+
+two:
+  htsus: MyString
+  date: 2013-10-28
+  author: MyString
+  verified_by: MyString
+  inv_description: MyString
+  gen_eng_description: MyString
+  gen_esp_description: MyString
+  early_triggers: MyString
+  legal_authority: MyString
+  comments: MyText
+  confidence: MyString
+  image_url: MyString

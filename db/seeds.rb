@@ -1,0 +1,43 @@
+Htscdt.delete_all
+
+Htscdt.create!(htsus: '9503.00.0073',
+	date: '2013/01/01',
+	author: 'Manuel Morales',
+	verified_by: 'Oscar Escalad',
+	inv_description: 'Munecos del Chavo del 8',
+	gen_eng_description: 'Stuffed toys',
+	gen_esp_description: 'Juguete De Peluche',
+	early_triggers: 'Finished Good Rule',
+	legal_authority: 'CROSS',
+	comments:%{<p> http://rulings.cbp.gov/detail.asp?ru=n197137&ac=pr</p>},
+	confidence: 'NOT Gray',
+	image_url: 'chavo-del-8.jpg',
+)
+
+Htscdt.create!(htsus: '0503.00.0073',
+	date: '2013/03/01',
+	author: 'Martha Casas',
+	verified_by: 'Oscar Escalad',
+	inv_description: 'Basil',
+	gen_eng_description: 'Fresh Basil',
+	gen_esp_description: 'Albaca Fresca',
+	early_triggers: 'Produce',
+	legal_authority: 'CROSS',
+	comments:%{<p> http://rulings.cbp.gov/detail.asp?ru=n197137&ac=pr</p>},
+	confidence: 'NOT Gray',
+	image_url: 'basil.jpg',
+)
+
+Htscdt.create!(htsus: '0503.00.0073',
+	date: '2013/13/01',
+	author: 'Martha Casas',
+	verified_by: 'Oscar Escalad',
+	inv_description: 'Carnation',
+	gen_eng_description: 'Fresh Cut Carnation',
+	gen_esp_description: 'Clavel fresco',
+	early_triggers: 'Folwers',
+	legal_authority: 'CROSS',
+	comments:%{<p> http://rulings.cbp.gov/detail.asp?ru=n197137&ac=pr</p>},
+	confidence: 'NOT Gray',
+	image_url: 'carnation.jpg',
+)
