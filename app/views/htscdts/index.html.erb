@@ -2,20 +2,31 @@
 
 <table>
   <% @htscdts.each do |htscdt| %>
-  <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+  <tr class="list_line">
     <td> <%= image_tag(htscdt.image_url, class: 'list_image') %> </td>
-    <td class="list_description">
+    <td class="list_columns">
       <dl>
         <dt><%= htscdt.htsus %></dt>
+        <dd><%= htscdt.inv_description %></dd>
         <dd><%= htscdt.gen_eng_description %></dd>
         <dd><%= htscdt.gen_esp_description %></dd>
       </dl>
     </td>
 
-    <td class="author_description">
+    <td class="list_columns">
       <dl>
-        <dd><%= htscdt.author %></dd>
+        <dt><%= htscdt.author %></dt>
         <dd><%= htscdt.verified_by %></dd>
+        <dd><%= htscdt.legal_authority %></dd>
+        <dd><%= link_to 'Link', htscdt.comments, :target => "_blank" %></dd>
+      </dl>
+    </td>
+
+    <td class="list_columns">
+      <dl>
+        <dt><%= htscdt.early_triggers %></dt>
+        <dd><%= htscdt.date %></dd>
+        <dd><%= htscdt.confidence %></dd>
       </dl>
     </td>
 

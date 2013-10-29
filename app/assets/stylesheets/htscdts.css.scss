@@ -13,8 +13,8 @@
 		width: 60px;
 		height: 70px;
 	}
-	.list_description {
-		width: 60%;
+	.list_columns {
+		width: 30%;
 		dl {
 			margin: 0;
 		}
@@ -27,17 +27,15 @@
 			margin: 0;
 		}
 	}
+
 	.list_actions {
 		font-size: x-small;
 		text-align: right;
 		padding-left: 1em;
 	}
-	.list_line_even {
+	
+	.list_line {
 		/*background: #e0f8f8;*/
-		border-bottom:3px solid #244;
-	}
-	.list_line_odd {
-		/*background: #f8b0f8;*/
 		border-bottom:3px solid #244;
 	}
 }
