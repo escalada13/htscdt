@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class HtscdtTest < ActiveSupport::TestCase
-	fixtures :htscdt
+	fixtures :htscdts
 
 	test "product attributes must not be empty" do
 		htscdt = Htscdt.new
@@ -18,7 +18,7 @@ class HtscdtTest < ActiveSupport::TestCase
 		assert htscdt.errors[:confidence].any?
 	end
 
-	def new_product(image_url)
+	def new_htscdt(image_url)
 		Htscdt.new(
 							htsus:"0000.00.0000",
 							date:"2013-01-01",
@@ -50,7 +50,7 @@ class HtscdtTest < ActiveSupport::TestCase
 
 	test "htscdt is not valid without a unique htsus" do
 		htsus = Htscdt.new(
-							htsus:"0000.00.0000",
+							htsus: htscdts(:htsus).htsus,
 							date:"2013-01-01",
 							author:"lorem ipsun",
 							verified_by:"lorem ipsun",
@@ -63,10 +63,10 @@ class HtscdtTest < ActiveSupport::TestCase
 							other_link:"lorem ipsun",
 							comments:"lorem ipsun",
 							confidence:"lorem ipsun",
-							image_url: image_url
+							image_url: "test.jpg"
 							)
 		assert htsus.invalid?
-		assert_equal [I18n.translate('errors.messages.taken')], product.errors[:htsus]
+		assert_equal [I18n.translate('errors.messages.taken')], htsus.errors[:htsus]
 	end
 
 end
