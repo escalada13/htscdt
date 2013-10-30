@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131028230248) do
+ActiveRecord::Schema.define(version: 20131029203843) do
 
   create_table "htscdts", force: true do |t|
     t.string   "htsus"
@@ -23,6 +23,8 @@ ActiveRecord::Schema.define(version: 20131028230248) do
     t.string   "gen_esp_description"
     t.string   "early_triggers"
     t.string   "legal_authority"
+    t.string   "la_link"
+    t.string   "other_link"
     t.text     "comments"
     t.string   "confidence"
     t.string   "image_url"

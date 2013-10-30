@@ -28,6 +28,21 @@
 		}
 	}
 
+	.list_comments {
+		width: 30%;
+		dl {
+			margin: 0;
+		}
+		dt {
+			color: #244;
+			font-weight: bold;
+			font-size: larger;
+		}
+		dd {
+			margin: 0;
+		}
+	}
+
 	.list_actions {
 		font-size: x-small;
 		text-align: right;
@@ -37,5 +52,8 @@
 	.list_line {
 		/*background: #e0f8f8;*/
 		border-bottom:3px solid #244;
+	}
+	.top_line{
+		margin-top:10px;
 	}
 }

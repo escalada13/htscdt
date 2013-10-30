@@ -2,7 +2,7 @@
 
 <table>
   <% @htscdts.each do |htscdt| %>
-  <tr class="list_line">
+  <tr class="top_line">
     <td> <%= image_tag(htscdt.image_url, class: 'list_image') %> </td>
     <td class="list_columns">
       <dl>
@@ -18,14 +18,14 @@
         <dt><%= htscdt.author %></dt>
         <dd><%= htscdt.verified_by %></dd>
         <dd><%= htscdt.legal_authority %></dd>
-        <dd><%= link_to 'Link', htscdt.comments, :target => "_blank" %></dd>
+        <dd><%= link_to 'Link To Reference', htscdt.la_link, :target => "_blank"  unless htscdt.la_link.empty? %></dd>
       </dl>
     </td>
 
     <td class="list_columns">
       <dl>
         <dt><%= htscdt.early_triggers %></dt>
-        <dd><%= htscdt.date %></dd>
+        <dd><%= htscdt.date.to_time.strftime('%B %e %Y') %></dd>
         <dd><%= htscdt.confidence %></dd>
       </dl>
     </td>
@@ -36,6 +36,16 @@
       <%= link_to 'Destroy', htscdt, method: :delete, data: { confirm: 'Are you sure?' } %>
     </td>
   </tr>
+
+  <tr class="list_line">
+    <td></td>
+    <td class="list_comments" colspan = "4">
+      <dt>COMMENTS<dt>
+      <dd><%= htscdt.comments %></dd>
+      <dd><%= link_to 'Other Link References', htscdt.other_link, :target => "_blank" unless htscdt.other_link.empty? %></dd>
+    </td>
+  </td>
+  <td class="list_actions"></td>
   <% end %>
 </table>
 

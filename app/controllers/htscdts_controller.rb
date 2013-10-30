@@ -69,6 +69,6 @@ class HtscdtsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def htscdt_params
-      params.require(:htscdt).permit(:htsus, :date, :author, :verified_by, :inv_description, :gen_eng_description, :gen_esp_description, :early_triggers, :legal_authority, :comments, :confidence, :image_url)
+      params.require(:htscdt).permit(:htsus, :date, :author, :verified_by, :inv_description, :gen_eng_description, :gen_esp_description, :early_triggers, :legal_authority, :la_link, :other_link, :comments, :confidence, :image_url)
     end
 end

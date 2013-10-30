@@ -3,6 +3,22 @@ require 'test_helper'
 class HtscdtsControllerTest < ActionController::TestCase
   setup do
     @htscdt = htscdts(:one)
+    @update = {
+      htsus:'0000.00.0000',
+      date:'2013-01-01',
+      author:'lorem ipsum',
+      verified_by:'lorem ipsum',
+      inv_description:'lorem ipsum',
+      gen_eng_description:'lorem ipsum',
+      gen_esp_description:'lorem ipsum',
+      early_triggers:'lorem ipsum',
+      legal_authority:'lorem ipsum',
+      la_link:'lorem ipsum',
+      other_link:'lorem ipsum',
+      comments:'Esta es nuestra bd!',
+      confidence:'lorem ipsum',
+      image_url:'test.jpg'
+    }
   end
 
   test "should get index" do
@@ -18,7 +34,7 @@ class HtscdtsControllerTest < ActionController::TestCase
 
   test "should create htscdt" do
     assert_difference('Htscdt.count') do
-      post :create, htscdt: { author: @htscdt.author, comments: @htscdt.comments, confidence: @htscdt.confidence, date: @htscdt.date, early_triggers: @htscdt.early_triggers, gen_eng_description: @htscdt.gen_eng_description, gen_esp_description: @htscdt.gen_esp_description, htsus: @htscdt.htsus, image_url: @htscdt.image_url, inv_description: @htscdt.inv_description, legal_authority: @htscdt.legal_authority, verified_by: @htscdt.verified_by }
+      post :create, htscdt: @update
     end
 
     assert_redirected_to htscdt_path(assigns(:htscdt))
@@ -35,7 +51,7 @@ class HtscdtsControllerTest < ActionController::TestCase
   end
 
   test "should update htscdt" do
-    patch :update, id: @htscdt, htscdt: { author: @htscdt.author, comments: @htscdt.comments, confidence: @htscdt.confidence, date: @htscdt.date, early_triggers: @htscdt.early_triggers, gen_eng_description: @htscdt.gen_eng_description, gen_esp_description: @htscdt.gen_esp_description, htsus: @htscdt.htsus, image_url: @htscdt.image_url, inv_description: @htscdt.inv_description, legal_authority: @htscdt.legal_authority, verified_by: @htscdt.verified_by }
+    patch :update, id: @htscdt, htscdt: @update
     assert_redirected_to htscdt_path(assigns(:htscdt))
   end
 

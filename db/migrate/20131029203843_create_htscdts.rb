@@ -10,6 +10,8 @@ class CreateHtscdts < ActiveRecord::Migration
       t.string :gen_esp_description
       t.string :early_triggers
       t.string :legal_authority
+      t.string :la_link
+      t.string :other_link
       t.text :comments
       t.string :confidence
       t.string :image_url

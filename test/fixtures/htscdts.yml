@@ -2,7 +2,7 @@
 
 one:
   htsus: MyString
-  date: 2013-10-28
+  date: 2013-10-29
   author: MyString
   verified_by: MyString
   inv_description: MyString
@@ -10,13 +10,15 @@ one:
   gen_esp_description: MyString
   early_triggers: MyString
   legal_authority: MyString
+  la_link: MyString
+  other_link: MyString
   comments: MyText
   confidence: MyString
   image_url: MyString
 
 two:
   htsus: MyString
-  date: 2013-10-28
+  date: 2013-10-29
   author: MyString
   verified_by: MyString
   inv_description: MyString
@@ -24,6 +26,24 @@ two:
   gen_esp_description: MyString
   early_triggers: MyString
   legal_authority: MyString
+  la_link: MyString
+  other_link: MyString
   comments: MyText
   confidence: MyString
   image_url: MyString
+
+htsus:
+  htsus: 9999.99.9999
+  date: 2013-10-29
+  author: Super author test
+  verified_by: Super verified test
+  inv_description: Super inv desc test
+  gen_eng_description: Super gen eng desc test
+  gen_esp_description: Super gen esp desc test
+  early_triggers: Super triggers test
+  legal_authority: Super authority test
+  la_link: Super la link test
+  other_link: Super other link test
+  comments: Super duper duper testing my text
+  confidence: Super confidence test
+  image_url: Supertest.jpg

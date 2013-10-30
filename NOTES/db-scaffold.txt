@@ -1,0 +1,35 @@
+rails generate scaffold HTSCDT 
+	htsus:string 
+	date:date 
+	author:string 
+	verified_by:string 
+	inv_description:string 
+	gen_eng_description:string 
+	gen_esp_description:string 
+	early_triggers:string 
+	legal_authority:string
+	la_link:string
+	other_link:string
+	comments:text 
+	confidence:string 
+	image_url:string -f
+
+
+	rails generate scaffold HTSCDT htsus:string date:date author:string verified_by:string inv_description:string gen_eng_description:string gen_esp_description:string early_triggers:string legal_authority:string la_link:string other_link:string comments:text confidence:string image_url:string -f
+
+	:htsus, :date, :author, :verified_by, :inv_description, :gen_eng_description, :gen_esp_description, :early_triggers, :legal_authority, :la_link, :other_link, :comments, :confidence, :image_url
+
+htsus
+date
+author
+verified_by
+inv_description
+gen_eng_description
+gen_esp_description
+early_triggers
+legal_authority
+la_link
+other_link
+comments
+confidence
+image_url
