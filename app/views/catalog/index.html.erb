@@ -4,13 +4,22 @@
 
 <h1>HTSUS Catalog</h1>
 
-<% @htscdts.each do |htscdt| %>
-	<div class="entry">
-		<%= image_tag(htscdt.image_url) %>
-		<h3><%= htscdt.htsus %></h3>
-		<%= sanitize(htscdt.gen_eng_description) %>
-		<div class="price_line">
-			<span class="price"><%= htscdt.author %></span>
-		</div>
-	</div>
+<% cache ['catalog', Htscdt.latest] do %>
+	<% @htscdts.each do |htscdt| %>
+		<% cache ['entry', htscdt] do %>
+			<div class="entry">
+				<%= image_tag(htscdt.image_url) %>
+				<div class="htsus">
+					<h3><%= htscdt.htsus %></h3>
+				</div>
+				<div class="title">
+					<h4><%= htscdt.gen_eng_description %></h4>
+				</div>
+				<%= sanitize(htscdt.comments) %>
+				<div class="price_line">
+					<span class="price"><%= htscdt.author %></span>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
 <% end %>
