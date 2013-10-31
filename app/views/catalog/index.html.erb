@@ -1,0 +1,16 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>HTSUS Catalog</h1>
+
+<% @htscdts.each do |htscdt| %>
+	<div class="entry">
+		<%= image_tag(htscdt.image_url) %>
+		<h3><%= htscdt.htsus %></h3>
+		<%= sanitize(htscdt.gen_eng_description) %>
+		<div class="price_line">
+			<span class="price"><%= htscdt.author %></span>
+		</div>
+	</div>
+<% end %>
