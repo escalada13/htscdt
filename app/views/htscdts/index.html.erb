@@ -31,7 +31,6 @@
     </td>
 
     <td class="list_actions">
-      <%= link_to 'Show', htscdt %><br/>
       <%= link_to 'Edit', edit_htscdt_path(htscdt) %><br/>
       <%= link_to 'Destroy', htscdt, method: :delete, data: { confirm: 'Are you sure?' } %>
     </td>
@@ -41,7 +40,7 @@
     <td></td>
     <td class="list_comments" colspan = "4">
       <dt>COMMENTS<dt>
-      <dd><%= htscdt.comments %></dd>
+      <dd><%= sanitize(htscdt.comments) %></dd>
       <dd><%= link_to 'Other Link References', htscdt.other_link, :target => "_blank" unless htscdt.other_link.empty? %></dd>
     </td>
   </td>
