@@ -12,5 +12,6 @@ Rails 4.0.0
 
 * Database creation
 
-* Database initialization
+* Database
+SQLite 3
 
