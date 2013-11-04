@@ -1,4 +1,8 @@
 Rancho::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   get "catalog/index"
   resources :htscdts
 

@@ -1,4 +1,8 @@
 class Htscdt < ActiveRecord::Base
+	has_many :line_items
+
+	before_destroy :ensure_not_referenced_by_any_line_item
+
 	validates :htsus, :date, :author, :inv_description, :gen_eng_description, :gen_esp_description, :early_triggers, :legal_authority, :comments, :confidence, :image_url, 
 						presence: true
 	validates :image_url, 
@@ -13,4 +17,16 @@ class Htscdt < ActiveRecord::Base
 	def self.latest
 		Htscdt.order(:updated_at).last
 	end
+
+	private
+		# ensure that there are no line items referencing this product
+		def ensure_not_referenced_by_any_line_item
+			if line_items.empty?
+				return true
+			else
+				errors.add(:base, 'Line Items present')
+				return false
+		end
+	end
+	
 end

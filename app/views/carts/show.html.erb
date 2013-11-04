@@ -1,0 +1,16 @@
+<% if notice %>
+	<p id="notice"><%= notice %></p>
+<% end %>
+	
+<h2>Your Invoice</h2>
+
+<table>
+	<% @cart.line_items.each do |item| %>
+		<tr>
+			<td><%= item.quantity %>&times;</td>
+			<td><%= item.htscdt.gen_eng_description %></td>
+			<td><%= item.htscdt.htsus %></td>
+		</tr>
+	<% end %>
+</table>
+<%= button_to 'Delete Invoice', @cart, method: :delete, data: { confirm: 'Are you sure you want to delete the invoice?' } %>

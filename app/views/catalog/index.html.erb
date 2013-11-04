@@ -24,6 +24,7 @@
 					<span class="info"><%= htscdt.author %> | </span>
 					<span class="info"><%= htscdt.verified_by %> | </span>
 					<span class="info"><%= htscdt.date.to_time.strftime('%B %e %Y') %></span>
+					<%= button_to 'Add to Invoice', line_items_path(htscdt_id: htscdt) %>
 				</div>
 			</div>
 		<% end %>
